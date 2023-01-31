@@ -28,7 +28,7 @@ function initGame(e) {
     let lettr = e.target.value.toLowerCase();
 
 
-    if (lettr.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${letter}`) && !correctLetters.includes(lettr)) {
+    if (lettr.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${lettr}`) && !correctLetters.includes(lettr)) {
 
         if (word.includes(lettr)) {
             for (let i = 0; i < word.length; i++) {
