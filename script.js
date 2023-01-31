@@ -25,21 +25,21 @@ function randomWord() {
 randomWord();
 
 function initGame(e) {
-    let key = e.target.value.toLowerCase();
+    let lettr = e.target.value.toLowerCase();
 
 
-    if (key.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${key}`) && !correctLetters.includes(key)) {
+    if (lettr.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${letter}`) && !correctLetters.includes(lettr)) {
 
-        if (word.includes(key)) {
+        if (word.includes(lettr)) {
             for (let i = 0; i < word.length; i++) {
-                if (word[i] == key) {
-                    correctLetters += key;
-                    inputs.querySelectorAll("input")[i].value = key;
+                if (word[i] == lettr) {
+                    correctLetters += lettr;
+                    inputs.querySelectorAll("input")[i].value = lettr;
                 }
             }
         } else {
             maxGuesses--;
-            incorrectLetters.push(` ${key}`);
+            incorrectLetters.push(` ${lettr}`);
         }
         guessLeft.innerText = maxGuesses;
         wrongLetter.innerText = incorrectLetters;
